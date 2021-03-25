@@ -1,5 +1,5 @@
 # todolist-test
-This project was bootstrapped with Expo for React-Native.
+This project was bootstrapped with Expo for React-Native. It is a test project to strengthen my react-native skills
 
 ## Available Scripts
 
