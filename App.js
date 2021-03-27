@@ -9,6 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Header from './components/header';
+import TodoItem from './components/todoItem';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -16,6 +17,12 @@ export default function App() {
     { text: 'Play games', key: '2' },
     { text: 'Get pizza', key: '3' }
   ]);
+
+  const pressHandler = (key) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((item) => item.key != key);
+    });
+  };
 
   return (
     <View style={styles.container}>
@@ -26,7 +33,9 @@ export default function App() {
         <View style={styles.list}>
           <FlatList
             data={todos}
-            renderItem={({ item }) => <Text>{item.text}</Text>}
+            renderItem={({ item }) => (
+              <TodoItem item={item} pressHandler={pressHandler} />
+            )}
           />
         </View>
       </View>
