@@ -7,7 +7,9 @@ import {
   ScrollView,
   FlatList,
   TouchableOpacity,
-  Alert
+  Alert,
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 import Header from './components/header';
 import TodoItem from './components/todoItem';
@@ -39,22 +41,28 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      {/* Header */}
-      <Header />
-      <View style={styles.content}>
-        {/* Form */}
-        <AddTodo submitHandler={submitHandler} />
-        <View style={styles.list}>
-          <FlatList
-            data={todos}
-            renderItem={({ item }) => (
-              <TodoItem item={item} pressHandler={pressHandler} />
-            )}
-          />
+    <TouchableWithoutFeedback
+      onPress={() => {
+        Keyboard.dismiss();
+      }}
+    >
+      <View style={styles.container}>
+        {/* Header */}
+        <Header />
+        <View style={styles.content}>
+          {/* Form */}
+          <AddTodo submitHandler={submitHandler} />
+          <View style={styles.list}>
+            <FlatList
+              data={todos}
+              renderItem={({ item }) => (
+                <TodoItem item={item} pressHandler={pressHandler} />
+              )}
+            />
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 
