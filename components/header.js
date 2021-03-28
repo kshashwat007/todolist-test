@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 12,
     marginRight: 35,
-    fontWeight: 'normal',
+    fontWeight: 'bold',
     marginTop: 12,
     backgroundColor: 'pink',
     borderRadius: 10,
