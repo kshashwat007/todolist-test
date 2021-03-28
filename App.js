@@ -14,6 +14,7 @@ import {
 import Header from './components/header';
 import TodoItem from './components/todoItem';
 import AddTodo from './components/addTodo';
+import Sandbox from './components/sandbox';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -31,7 +32,7 @@ export default function App() {
   const submitHandler = (text) => {
     if (text.length >= 3) {
       setTodos((prevTodos) => {
-        return [{ text: text, key: Math.random.toString() }, ...prevTodos];
+        return [{ text: text, key: Math.random().toString() }, ...prevTodos];
       });
     } else {
       Alert.alert('Oops!', 'A new todo must be more than 2 characters long', [
@@ -63,6 +64,7 @@ export default function App() {
         </View>
       </View>
     </TouchableWithoutFeedback>
+    // <Sandbox />
   );
 }
 
@@ -72,9 +74,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   content: {
+    flex: 1,
     padding: 40
   },
   list: {
+    flex: 1,
     marginTop: 20
   }
 });
