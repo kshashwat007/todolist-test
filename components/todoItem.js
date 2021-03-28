@@ -17,11 +17,12 @@ const styles = StyleSheet.create({
   item: {
     flexDirection: 'row',
     padding: 16,
-    marginTop: 16,
-    borderColor: '#bbb',
+    marginTop: 12,
+    borderColor: '#fff',
     borderWidth: 1,
     borderStyle: 'solid',
-    borderRadius: 10
+    borderRadius: 10,
+    backgroundColor: '#fff'
   },
   text: {
     marginLeft: 10
